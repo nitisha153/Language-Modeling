@@ -38,7 +38,15 @@ Parameters: 2D list of strs
 Returns: int
 '''
 def getCorpusLength(corpus):
-    return
+    word_count = []
+
+    for word in range(len(corpus)):
+        for sub_word in range(len(corpus[word])):
+            word_count.append(corpus[word][sub_word])
+
+    # print(word_count)
+    # print(len(word_count))
+    return len(word_count)
 
 
 '''

@@ -77,7 +77,15 @@ Parameters: 2D list of strs
 Returns: dict mapping strs to ints
 '''
 def countUnigrams(corpus):
-    return
+    unigrams ={}
+    for word in corpus:
+        for sub_word in word:
+            if sub_word not in unigrams:
+                unigrams[sub_word] = 0
+            unigrams[sub_word] +=1
+
+    #print(unigrams)
+    return unigrams
 
 
 '''

@@ -95,7 +95,17 @@ Parameters: 2D list of strs
 Returns: list of strs
 '''
 def getStartWords(corpus):
-    return
+    start_words =[]
+    for word in corpus:
+        for sub_word in word:
+            if sub_word == word[0]:
+                if sub_word not in start_words:
+                    start_words.append(sub_word)
+    
+    #print(start_words)
+
+
+    return start_words
 
 
 '''

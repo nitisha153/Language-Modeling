@@ -115,7 +115,16 @@ Parameters: 2D list of strs
 Returns: dict mapping strs to ints
 '''
 def countStartWords(corpus):
-    return
+    start_words = {}
+    for word in corpus:
+        if word[0] == word[0]:
+            if word[0] not in start_words:
+                start_words[word[0]] = 0
+            start_words[word[0]] += 1
+
+                
+    #print(start_words)
+    return start_words
 
 
 '''

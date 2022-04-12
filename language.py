@@ -60,7 +60,14 @@ Parameters: 2D list of strs
 Returns: list of strs
 '''
 def buildVocabulary(corpus):
-    return
+    vocab = []
+    for word in corpus:
+        #print(word)
+        for sub_word in word:
+            if sub_word not in vocab:
+                vocab.append(sub_word)
+    #print(vocab)
+    return vocab
 
 
 '''

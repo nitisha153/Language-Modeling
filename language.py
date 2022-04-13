@@ -191,7 +191,20 @@ Parameters: dict mapping strs to ints ; dict mapping strs to (dicts mapping strs
 Returns: dict mapping strs to (dicts mapping strs to (lists of values))
 '''
 def buildBigramProbs(unigramCounts, bigramCounts):
-    return
+    new_dict ={}
+    for prevWord in bigramCounts.keys():
+        words = []
+        prob = []
+        for keys in bigramCounts[prevWord]:
+            words.append(keys)
+            probability = bigramCounts[prevWord][keys]/unigramCounts[prevWord]
+            prob.append(probability)
+            temp_dict = {}
+            temp_dict["words"] = words
+            temp_dict["probs"] = prob
+        new_dict[prevWord] = temp_dict
+    #print(new_dict) 
+    return new_dict
 
 
 '''

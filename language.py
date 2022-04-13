@@ -384,7 +384,9 @@ Parameters: 2D list of strs ; str ; 2D list of strs ; str ; int ; str
 Returns: None
 '''
 def graphTopWordsSideBySide(corpus1, name1, corpus2, name2, numWords, title):
-    return
+    new_dict = setupChartData(corpus1,corpus2,numWords)
+    sideBySideBarPlots(new_dict["topWords"],new_dict["corpus1Probs"],new_dict["corpus2Probs"],name1,name2,title)
+    return None
 
 
 '''

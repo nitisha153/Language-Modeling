@@ -260,7 +260,17 @@ Parameters: int ; list of strs ; list of floats ; dict mapping strs to (dicts ma
 Returns: str
 '''
 def generateTextFromBigrams(count, startWords, startWordProbs, bigramProbs):
-    return
+    string = ""
+    empty_lst = []
+    for index in range(count):
+        if index == 0 or empty_lst[index-1] == ".":
+            new_lst = choices(startWords,startWordProbs)
+            empty_lst.append(new_lst[0])
+        else:
+            lst = choices(bigramProbs[empty_lst[index-1]]["words"],bigramProbs[empty_lst[index-1]]["probs"])
+            empty_lst.append(lst[0])
+    
+    return " ".join(empty_lst)
 
 
 ### WEEK 3 ###

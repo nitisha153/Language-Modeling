@@ -134,7 +134,22 @@ Parameters: 2D list of strs
 Returns: dict mapping strs to (dicts mapping strs to ints)
 '''
 def countBigrams(corpus):
-    return
+    bigrams = {}
+    for sentence in corpus:
+        for i in range(len(sentence)-1):
+            word_pair = sentence[i],sentence[i+1]
+            #print(word_pair)
+            if sentence[i] not in bigrams:
+                bigrams[sentence[i]] = {}
+            if sentence[i+1] in bigrams[sentence[i]]:
+                bigrams[sentence[i]][sentence[i+1]] += 1
+            else:
+                bigrams[sentence[i]][sentence[i+1]] = 1
+                
+
+    #print(bigrams)
+
+    return bigrams
 
 
 ### WEEK 2 ###
